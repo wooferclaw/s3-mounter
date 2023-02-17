@@ -9,6 +9,6 @@ entries:
     name: s3-otomount
     type: application
     urls:
-    - https://volldream.github.io/s3-otomount/s3-otomount-0.1.0.tgz
+    - https://volldream.github.io/s3-otomount/blob/main/s3-otomount-0.1.0.tgz
     version: 0.1.0
 generated: "2023-02-17T13:19:17.786233+01:00"
