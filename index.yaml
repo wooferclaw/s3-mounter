@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  s3-otomount:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-02-17T16:16:01.661594607Z"
+    description: Mount S3 buckets on K8S Nodes using goofys
+    digest: 4fb6a9b3c4caf669a7bd9ed5b2238fb5d2344722ff9fc5428d856857e243d714
+    name: s3-otomount
+    type: application
+    urls:
+    - https://github.com/volldream/s3-mounter/releases/download/s3-otomount-0.1.0/s3-otomount-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-17T16:16:01.661608708Z"
