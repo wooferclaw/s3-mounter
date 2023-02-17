@@ -18,4 +18,4 @@ bucketName: my-bucket
 iamRoleARN: my-role
 mountPath: /var/s3
 hostPath: /mnt/s3data
-
+commandOption: ["./goofys", "-f"]
