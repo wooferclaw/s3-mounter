@@ -24,7 +24,7 @@ spec:
         image: otomato/goofys        
         command:
           {{- range .Values.commandOption }}
-          - {{ . | title | quote }}
+          - {{ . | quote }}
           {{- end }} 
         securityContext:
           privileged: true
