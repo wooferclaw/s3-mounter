@@ -23,7 +23,6 @@ spec:
       - name: mounter 
         image: otomato/goofys        
         command: {{ .Values.commandOption }}
-        args: ["{{ .Values.bucketName }}", "{{ .Values.mountPath }}"]
         securityContext:
           privileged: true
         volumeMounts:
