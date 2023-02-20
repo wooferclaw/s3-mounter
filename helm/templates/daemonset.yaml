@@ -22,7 +22,10 @@ spec:
       containers:
       - name: mounter 
         image: otomato/goofys        
-        command: {{ .Values.commandOption }}
+        command: |-
+          {{- range .Values.commandOption }}
+          - {{ . | title | quote }}
+          {{- end }} 
         securityContext:
           privileged: true
         volumeMounts:
