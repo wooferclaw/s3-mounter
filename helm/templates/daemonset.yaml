@@ -22,7 +22,7 @@ spec:
       containers:
       - name: mounter 
         image: otomato/goofys        
-        command: |-
+        command:
           {{- range .Values.commandOption }}
           - {{ . | title | quote }}
           {{- end }} 
