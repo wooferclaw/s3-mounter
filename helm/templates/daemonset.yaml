@@ -21,7 +21,7 @@ spec:
       {{- end }}
       containers:
       - name: mounter 
-        image: otomato/goofys        
+        image: volldream/goofys        
         command:
           {{- range .Values.commandOption }}
           - {{ . | quote }}
