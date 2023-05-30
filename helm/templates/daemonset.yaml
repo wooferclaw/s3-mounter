@@ -15,13 +15,13 @@ spec:
         app: s3-mounter
     spec:
       {{ if .Values.serviceAccount.create }}
-      serviceAccountName: s3-mounter
+      serviceAccountName: s3-otomounter
       {{- else -}}
       serviceAccountName: {{ .Values.serviceAccount.name }}
       {{- end }}
       containers:
       - name: mounter 
-        image: otomato/goofys        
+        image: wooferclaw/s3-mounter-hack       
         command:
           {{- range .Values.commandOption }}
           - {{ . | quote }}
@@ -30,7 +30,7 @@ spec:
           privileged: true
         volumeMounts:
         - name: mntdatas3
-          mountPath: {{ .Values.mountPath }}:shared
+          mountPath: {{ .Values.mountPath }}
         env:
           - name: S3_BUCKET
             value: {{ .Values.bucketName }}

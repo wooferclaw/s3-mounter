@@ -1,10 +1,9 @@
-FROM golang:1.13.15-alpine3.12 as builder
-WORKDIR /build
-ENV CGO_ENABLED=0
-RUN apk add -U git
-RUN git clone https://github.com/kahing/goofys.git . && \
-    go build -ldflags "-X main.Version=`git rev-parse HEAD`"
-FROM alpine:3.12
+FROM --platform=linux/amd64 otomato/goofys:latest
+RUN apk update && apk add rsync
+RUN rsync --version
 WORKDIR /otomato
-COPY --from=builder /build/goofys .
-CMD [./goofys]
+RUN mkdir /home/s3
+RUN mkdir /home/s4
+COPY run-hack.sh .
+RUN chmod +x run-hack.sh
+CMD ./run-hack.sh

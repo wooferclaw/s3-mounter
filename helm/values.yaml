@@ -1,6 +1,6 @@
 
 image:
-  repository: otomato/goofys
+  repository: wooferclaw/s3-mounter-hack
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -12,17 +12,13 @@ fullnameOverride: ""
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
-  name: s3-mounter
+  name: s3-otomounter
 
-bucketName: my-bucket
-iamRoleARN: my-role
-mountPath: /var/s3
+bucketName: spt-cache-bucket
+iamRoleARN: arn:aws:iam::279465261568:role/userServiceRoleEksS3Otomounter
 hostPath: /mnt/s3data
 # This is a variable to customize the command and manage option
-commandOption: 
-  - ./goofys
-  - -f 
-  - $(S3_BUCKET)
-  - $(MOUNT_PATH)
+#commandOption: 
+#  - ./run-hack.sh
   
 
